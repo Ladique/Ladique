@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS stylesheet -->
+    <link rel="stylesheet" type="text/css"  href="{{url_for('static', filename='100level.css')}}">
+</head>
+<body>
+ 
+    {% include 'index.html' %} 
+   
+    <style>
+        table {
+            width: 150%;
+            border-collapse: collapse;
+            margin-left: 40px;
+            margin-top: 30px;
+            border-radius: 10px;
+        }
+
+        th, td {
+            padding: 12px 20px;
+            text-align: left;
+            border-right: 1px solid black;
+            border-bottom: 1px solid #f2f2f2;
+            
+        }
+
+        th {
+            background-color: #2093c3;
+           
+            
+        }
+
+        /* Style table header */
+         th:nth-child(1) {
+            width: 50%;
+            
+        }
+
+        th:nth-child(2) {
+            
+            width: 50%;
+        }
+
+        /* Add some style to the table rows */
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        /* Style for hover effect on rows */
+        tr {
+            background-color: #ddd;
+        }
+         
+    </style> 
+    
+    
+        
+<div class="containers2">
+    <div class="part2">
+    <table>
+        <thead>
+            <tr>
+                <th>Course Code</th>
+                <th>Course Name</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Example table rows (you can dynamically generate these with server-side code) -->
+            <tr>
+                <td>CPE 301</td>
+                <td>Data Structures and Algorithms</td>
+            </tr>
+            <tr>
+                <td>EEE 302</td>
+                <td>Electric Circuits</td>
+            </tr>
+            <tr>
+                <td>MEE 303</td>
+                <td>Thermodynamics</td>
+            </tr>
+            <tr>
+                <td>CHE 304</td>
+                <td>Chemical Engineering Principles</td>
+            </tr>
+            <tr>
+                <td>CE 305</td>
+                <td>Structural Analysis</td>
+            </tr>
+            <tr>
+                <td>ME 306</td>
+                <td>Fluid Mechanics</td>
+            </tr>
+            <tr>
+                <td>EE 307</td>
+                <td>Electromagnetic Fields</td>
+            </tr>
+            <tr>
+                <td>CPE 308</td>
+                <td>Software Engineering</td>
+            </tr>
+            <tr>
+                <td>ME 309</td>
+                <td>Machine Design</td>
+            </tr>
+            <tr>
+                <td>CE 310</td>
+                <td>Environmental Engineering</td>
+            </tr>
+            <tr>
+                <td>EEE 311</td>
+                <td>Control Systems</td>
+            </tr>
+     
+    
+        </tbody>
+    </table>
+    </div>
+</div>
+</body>
+</html>

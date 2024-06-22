@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <nav>
+            <ul>
+                <li><div class="logo">
+                    <img src="{{url_for('static', filename='user.bmp')}}" alt="School Logo">
+    
+                    <span class="nav-item1">{{ user.first_name }} {{ user.last_name }}</span>
+                </div></li>
+                <li></li>
+                <li></li>
+                <li>
+                    <i class="fas fa-home"></i>
+                    <span class="nav-item2">Department : Computer Engineering</span>
+                <li></li>
+                <li></li>
+                <li>
+                    <i class="fas fa-chart-bar"></i>
+                    <span class="fa">Matric No : {{ user.matriculation_number }}</span>
+                </li>
+                <li></li>
+                <li></li>
+                <li>
+                    <i class="fas fa-chart-bar"></i>
+                    <span class="nav-item3">Email : {{ user.email }}</span>
+                </li>
+                <li></li>
+                <li></li>
+                <li>
+                    <i class="fas fa-tasks"></i>
+                    <span class="nav-item4">Level : {{ user.level }}</span>
+                </li>
+                <li></li>
+                <li></li>
+                <li>
+                    <i class="fas fa-cog"></i>
+                    <span class="nav-item5">Phone Number : {{ user.phone }}</span>
+                </li>
+               
+            </ul>
+        </nav>
+    </div>
+        
+    <div class="containers">
+        <div class="part1"> 
+            <a href="{{url_for('level1')}}" class="level-button">100 level Courses</a>
+            <a href="{{url_for('level2')}}" class="level-button">200 level Courses</a>
+            <a href="{{url_for('level3')}}" class="level-button">300 level Courses</a>
+            <a href="{{url_for('level4')}}" class="level-button">400 level Courses</a>
+            <a href="{{url_for('level5')}}" class="level-button">500 level Courses</a>
+        </div>
+    </div>
+
+</body>
+</html>

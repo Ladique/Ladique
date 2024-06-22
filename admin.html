@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="{{url_for('static', filename='RUNACES LOGO.png')}}" >
+    <link rel="stylesheet" type="text/css"  href="{{url_for('static', filename='admin.css')}}">
+    <title>Admin login Page</title>
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="/logout" class="Logout">Logout</a></li>
+        </ul>
+    </div>    
+    
+    <div class="pan">
+        <h2>Admin Panel</h2>
+    </div>
+
+    <style>
+        /* Define table styles */
+        table {
+            width: 95%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            margin-left: 40px;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            
+        }
+
+        th {
+            background-color: #f2f2f2;
+            
+        }
+
+        /* Style table header */
+        th:nth-child(1) {
+            width: 6%;
+        }
+
+        th:nth-child(2) {
+            width: 15%;
+        }
+
+        th:nth-child(3) {
+            width: 15%;
+        }
+
+        th:nth-child(4) {
+            width: 15%;
+        }
+
+        /* Add some style to the table rows */
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        /* Style for hover effect on rows */
+        tr {
+            background-color: #ddd;
+        }
+        td button.Delete {
+            background-color: #8B0000;
+            color: white;
+            border: none;
+            border-radius: 7px;
+            padding: 6px 10px;
+            cursor: pointer;
+        }
+    </style>
+    <div class="containers">
+        <div class="part1">
+    
+            <div class="head">
+                <h3>Registered Users</h3>
+            </div>
+            
+        <table>
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Matriculation Number</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Level</th>
+                    <th>Barcode</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                    <tr>
+                        <td>{{ user.id }}</td>
+                        <td>{{ user.first_name }}</td>
+                        <td>{{ user.last_name }}</td>
+                        <td>{{ user.matriculation_number }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.phone }}</td>
+                        <td>{{ user.level }}</td>
+                        <td>{{ user.barcode }}</td>
+                        <td>
+                            <!-- Create a form for each user with a delete button -->
+                            <form method="POST" action="/admin">
+                                <input type="hidden" name="delete" class = "Delete" value="{{ user.id }}">
+                                <button type="submit" class = "Delete">Delete</button>
+                            </form>
+                        </td>
+                
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        </div>
+    </div>
+</body>
+</html>

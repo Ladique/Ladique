@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='register.css') }}">
+</head>
+<body>
+    <div class="flash-messages">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class="messages">
+                    {% for category, message in messages %}
+                        <li class="message {{ category }}">
+                            {{ message }}
+                            <span class="close-btn" onclick="this.parentElement.style.display='none'">&times;</span>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    </div>
+    <div class="logo2">
+        <img src="{{url_for('static', filename='logo.png')}}" alt="School Logo">
+    </div>
+    <div class="wrapper2">
+        
+
+        <form method="POST" action="/register">
+            <h1>Register</h1>
+            <div class="input-box2">
+                <input type="text" placeholder="First Name"  id="first_name" name="first_name" required>
+            <input type="text" placeholder="Last Name" id="last_name" name="last_name" required>
+            <input type="text" placeholder="Matriculation Number" id="matriculation_number" name="matriculation_number" required>
+            <input type="text" placeholder="Email" id="email" name="email" required>
+            <input type="text" placeholder="Phone" id="phone" name="phone" required>
+            <input type="text" placeholder="Level" id="level" name="level" required>
+            <input type="text" placeholder="Bar Code" id="barcode" name="barcode" required>
+            </div>
+            <div class="reg2link">
+                <button type="submit" class="button">Register</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
